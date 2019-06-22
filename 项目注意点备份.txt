@@ -1,2 +1,6 @@
 1. <.gitignore>中存放git工具的忽略文件，有一些东西不用上传
 2.LICENCE 是从 mui 文件夹中拷过来的开源协议（ MIT开源协议 ）
+3.git存储文件的步骤：（将文件提交到国内的码云 gitee.com）
+（1）git init（初始化git）
+（2）git add .(添加到缓存区)
+（3）git commit -m "init my project"（提交缓存区的文件，后面添加上每次更新文件的说明语）
