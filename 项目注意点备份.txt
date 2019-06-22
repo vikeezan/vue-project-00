@@ -4,3 +4,4 @@
 （1）git init（初始化git）
 （2）git add .(添加到缓存区)
 （3）git commit -m "init my project"（提交缓存区的文件，后面添加上每次更新文件的说明语）
+（4）git push

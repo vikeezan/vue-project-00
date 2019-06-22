@@ -3,6 +3,8 @@ import Vue from 'vue'
 
 //导入MUI的样式
 import './lib/mui/css/mui.min.css'
+import './lib/mui/css/icons-extra.css'
+import './lib/mui/fonts/mui-icons-extra.ttf'
 
 
 //按需导入 Mint-UI 中的组件
