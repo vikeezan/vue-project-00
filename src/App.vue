@@ -5,29 +5,31 @@
 
 
         <!--中间的路由 router-view 区域-->
-
+        <transition>
+            <router-view></router-view>
+        </transition>
 
 
         <!--底部的 tabbar 区域-->
         <nav class="mui-bar mui-bar-tab"><!--mui中的tabbar组件-->
-            <a class="mui-tab-item mui-active" href="#tabbar">
+            <router-link class="mui-tab-item" to="/home">
                 <span class="mui-icon mui-icon-home"></span>
                 <span class="mui-tab-label">首页</span>
-            </a>
-            <a class="mui-tab-item" href="#tabbar-with-chat">
+            </router-link>
+            <router-link class="mui-tab-item" to="/member">
                 <span class="mui-icon mui-icon-contact"></span>
                 <span class="mui-tab-label">会员</span>
-            </a>
-            <a class="mui-tab-item" href="#tabbar-with-contact">
+            </router-link>
+            <router-link class="mui-tab-item" to="/shopcar">
                 <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
                 <span class="mui-tab-label">购物车</span>
-            </a>
-            <a class="mui-tab-item" href="#tabbar-with-map">
+            </router-link>
+            <router-link class="mui-tab-item" to="/search">
                 <span class="mui-icon mui-icon-search"></span>
                 <span class="mui-tab-label">搜索</span>
-            </a>
+            </router-link>
         </nav>
-    <h1>123</h1>
+
     </div>
 </template>
 
@@ -38,5 +40,22 @@
 <style lang="scss" scoped>
 .app-container{
     padding-top: 40px;
+    overflow-x: hidden;
 }
+.v-enter{/*实现页面动画*/
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.v-leave-to{/*实现页面动画*/
+    opacity: 0;
+    transform: translateX(-100%);
+    position: absolute;
+}
+
+.v-enter-active,
+.v-leave-active{/*实现页面动画*/
+    transition: all 0.5s ease;
+}
+
 </style>
