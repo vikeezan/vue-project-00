@@ -41,6 +41,7 @@
 .app-container{
     padding-top: 40px;
     overflow-x: hidden;
+    padding-bottom: 50px;
 }
 .v-enter{/*实现页面动画*/
     opacity: 0;
