@@ -40,6 +40,12 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
+/*安装我们的图片预览插件*/
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
+
+
+
 //1.3导入自己的router.js 路由模块
 import router from './router.js'
 
