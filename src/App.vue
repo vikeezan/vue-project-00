@@ -1,7 +1,11 @@
 <template>
     <div class="app-container">
         <!--顶部header区域-->
-        <mt-header fixed title="云海机电维修中心"></mt-header><!--Mint-UI中的Header组件-->
+        <mt-header fixed title="云海机电维修中心">
+            <span slot="left" @click="goBack" v-show="flag">
+                <mt-button icon="back">返回</mt-button>
+            </span>
+        </mt-header><!--Mint-UI中的Header组件-->
 
 
         <!--中间的路由 router-view 区域-->
@@ -21,7 +25,7 @@
                 <span class="mui-tab-label">会员</span>
             </router-link>
             <router-link class="mui-tab-item-zqq" to="/shopcar">
-                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">0</span></span>
+                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">{{ $store.getters.getAllCount }}</span></span>
                 <span class="mui-tab-label">购物车</span>
             </router-link>
             <router-link class="mui-tab-item-zqq" to="/search">
@@ -34,7 +38,31 @@
 </template>
 
 <script>
-
+export default {
+    data(){
+        return {
+            flag: false
+        };
+    },
+    created(){
+        this.flag = this.$route.path === "/home" ? false : true;
+        /*若this.$route.path === "/home"的话flag那就为false，如果this.$route.path 不等于 "/home"的话那就为true*/
+    },
+    methods:{
+        goBack(){//点击后退
+            this.$router.go(-1);
+        }
+    },
+    watch:{//监听返回按钮的状态，若为首页的话返回区域隐藏，若不是首页的话则显示
+        '$route.path':function (newVal) {
+            if(newVal === "/home"){
+                this.flag = false;
+            }else{
+                this.flag = true;
+            }
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>
